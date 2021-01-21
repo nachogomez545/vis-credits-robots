@@ -127,3 +127,15 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Robots testing
+node_modules/**
+node_modules/*
+node_modules
+*.png
+*.html
+*.xml
+out/**
+out/*
+out
+.idea

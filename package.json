@@ -1,0 +1,35 @@
+{
+  "name": "vis-credits-robots",
+  "version": "1.0.0",
+  "description": "Automated testing for the ATDD on Credits",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "appium": "^1.20.1",
+    "appium-doctor": "^1.16.0",
+    "playwright": "^1.7.1",
+    "playwright-chromium": "^1.7.1",
+    "playwright-firefox": "^1.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nachogomez545/vis-credits-robots.git"
+  },
+  "keywords": [
+    "Robotframework",
+    "Credits",
+    "ATDD"
+  ],
+  "author": "Jesús Gómez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nachogomez545/vis-credits-robots/issues"
+  },
+  "homepage": "https://github.com/nachogomez545/vis-credits-robots#readme"
+}

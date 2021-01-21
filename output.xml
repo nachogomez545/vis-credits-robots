@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.1 on darwin)" generated="20210120 15:18:35.300" rpa="false">
+<suite id="s1" name="Tests" source="/Users/jegomez/Documents/projects/credits/vis-credits-robots/tests/clickoff/motors/webmobile/mco/tests.robot">
+<test id="s1-t1" name="Card is correct for Motors MCO Webmobile">
+<kw name="Get Variable Value" library="BuiltIn">
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+<arg>${DEFAULT_BROWSER}</arg>
+</arguments>
+<assign>
+<var>${BROWSER}</var>
+</assign>
+<msg timestamp="20210120 15:18:35.573" level="INFO">${BROWSER} = webkit</msg>
+<status status="PASS" starttime="20210120 15:18:35.572" endtime="20210120 15:18:35.574"></status>
+</kw>
+<kw name="Get Variable Value" library="BuiltIn">
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<arguments>
+<arg>${HEADLESS}</arg>
+<arg>${False}</arg>
+</arguments>
+<assign>
+<var>${HEADLESS}</var>
+</assign>
+<msg timestamp="20210120 15:18:35.575" level="INFO">${HEADLESS} = False</msg>
+<status status="PASS" starttime="20210120 15:18:35.574" endtime="20210120 15:18:35.575"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>headless=${HEADLESS}</arg>
+<arg>emulate=iPhone 11</arg>
+</arguments>
+<assign>
+<var>&amp;{options}</var>
+</assign>
+<msg timestamp="20210120 15:18:35.576" level="INFO">&amp;{options} = { headless=False | emulate=iPhone 11 }</msg>
+<status status="PASS" starttime="20210120 15:18:35.575" endtime="20210120 15:18:35.576"></status>
+</kw>
+<kw name="Open Browser" library="PuppeteerLibrary">
+<doc>Opens a new browser instance to the specific ``url``.</doc>
+<arguments>
+<arg>${vip}</arg>
+<arg>browser=${BROWSER}</arg>
+<arg>options=${options}</arg>
+<arg>alias=TestBrowser</arg>
+</arguments>
+<msg timestamp="20210120 15:18:35.577" level="INFO">https://carro.mercadolibre.com.co/MCO-598633795-se-vende-hermosa-camioneta-toyona-rush-full-equipo-_JM</msg>
+<status status="PASS" starttime="20210120 15:18:35.576" endtime="20210120 15:18:38.543"></status>
+</kw>
+<kw name="Credits click off card should be present and has the right content" library="resources">
+<kw name="Get Text" library="PuppeteerLibrary">
+<doc>Returns text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="classi-credits-vip-section"]/div/p</arg>
+</arguments>
+<assign>
+<var>${title text}</var>
+</assign>
+<msg timestamp="20210120 15:18:38.587" level="INFO">${title text} = Simula tu crédito online NUEVO</msg>
+<status status="PASS" starttime="20210120 15:18:38.544" endtime="20210120 15:18:38.587"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${title text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20210120 15:18:38.587" level="INFO">${title} = Simula tu crédito online NUEVO</msg>
+<status status="PASS" starttime="20210120 15:18:38.587" endtime="20210120 15:18:38.587"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${title}</arg>
+<arg>${card title text}</arg>
+</arguments>
+<status status="PASS" starttime="20210120 15:18:38.587" endtime="20210120 15:18:38.588"></status>
+</kw>
+<kw name="Get Text" library="PuppeteerLibrary">
+<doc>Returns text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="classi-credits-vip-section"]/div/ul/li[1]</arg>
+</arguments>
+<assign>
+<var>${bullet 0 text}</var>
+</assign>
+<msg timestamp="20210120 15:18:38.595" level="INFO">${bullet 0 text} = Eliges el monto a financiar y el número de cuotas.</msg>
+<status status="PASS" starttime="20210120 15:18:38.588" endtime="20210120 15:18:38.595"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${bullet 0 text}</arg>
+<arg>${card bullet 0 text}</arg>
+</arguments>
+<status status="PASS" starttime="20210120 15:18:38.595" endtime="20210120 15:18:38.596"></status>
+</kw>
+<kw name="Get Text" library="PuppeteerLibrary">
+<doc>Returns text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="classi-credits-vip-section"]/div/ul/li[2]</arg>
+</arguments>
+<assign>
+<var>${bullet 1 text}</var>
+</assign>
+<msg timestamp="20210120 15:18:38.602" level="INFO">${bullet 1 text} = Completas tus datos personales.</msg>
+<status status="PASS" starttime="20210120 15:18:38.596" endtime="20210120 15:18:38.602"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${bullet 1 text}</arg>
+<arg>${card bullet 1 text}</arg>
+</arguments>
+<status status="PASS" starttime="20210120 15:18:38.602" endtime="20210120 15:18:38.603"></status>
+</kw>
+<kw name="Get Text" library="PuppeteerLibrary">
+<doc>Returns text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="classi-credits-vip-section"]/div/ul/li[3]</arg>
+</arguments>
+<assign>
+<var>${bullet 2 text}</var>
+</assign>
+<msg timestamp="20210120 15:18:38.609" level="INFO">${bullet 2 text} = Recibes un contacto del banco para otorgarte el crédito.</msg>
+<status status="PASS" starttime="20210120 15:18:38.603" endtime="20210120 15:18:38.609"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${bullet 2 text}</arg>
+<arg>${card bullet 2 text}</arg>
+</arguments>
+<status status="PASS" starttime="20210120 15:18:38.609" endtime="20210120 15:18:38.610"></status>
+</kw>
+<kw name="Get Text" library="PuppeteerLibrary">
+<doc>Returns text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="classi-credits-vip-section"]/div/div/div[1]</arg>
+</arguments>
+<assign>
+<var>${subtitle text}</var>
+</assign>
+<msg timestamp="20210120 15:18:38.616" level="INFO">${subtitle text} = Trabajamos con</msg>
+<status status="PASS" starttime="20210120 15:18:38.610" endtime="20210120 15:18:38.616"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${subtitle text}</arg>
+<arg>${card subtitle text}</arg>
+</arguments>
+<status status="PASS" starttime="20210120 15:18:38.617" endtime="20210120 15:18:38.617"></status>
+</kw>
+<kw name="Get Element Attribute" library="PuppeteerLibrary">
+<doc>Return the value of ``attribute`` from the element.</doc>
+<arguments>
+<arg>xpath://*[@id="santander"]</arg>
+<arg>src</arg>
+</arguments>
+<assign>
+<var>${card bank logo src}</var>
+</assign>
+<msg timestamp="20210120 15:18:38.624" level="INFO">${card bank logo src} = https://mobile.mercadolibre.com/remote_resources/image/logo-mlbsantander-vip-card</msg>
+<status status="PASS" starttime="20210120 15:18:38.617" endtime="20210120 15:18:38.624"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${card bank logo}</arg>
+<arg>${card bank logo src}</arg>
+</arguments>
+<status status="PASS" starttime="20210120 15:18:38.624" endtime="20210120 15:18:38.624"></status>
+</kw>
+<kw name="Get Text" library="PuppeteerLibrary">
+<doc>Returns text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="classi-credits-card-action"]</arg>
+</arguments>
+<assign>
+<var>${button text}</var>
+</assign>
+<msg timestamp="20210120 15:18:38.634" level="INFO">${button text} = Simular crédito</msg>
+<status status="PASS" starttime="20210120 15:18:38.625" endtime="20210120 15:18:38.634"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${button text}</arg>
+<arg>${card button text}</arg>
+</arguments>
+<status status="PASS" starttime="20210120 15:18:38.634" endtime="20210120 15:18:38.635"></status>
+</kw>
+<kw name="Get Element Attribute" library="PuppeteerLibrary">
+<doc>Return the value of ``attribute`` from the element.</doc>
+<arguments>
+<arg>xpath://*[@id="classi-credits-card-action"]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${card button link text}</var>
+</assign>
+<msg timestamp="20210120 15:18:38.699" level="INFO">${card button link text} = https://tucarro.santanderconsumer.co/landing/?idvehiculo=MCO598633795&amp;fuente=enriquecido</msg>
+<status status="PASS" starttime="20210120 15:18:38.635" endtime="20210120 15:18:38.699"></status>
+</kw>
+<kw name="Get Element Attribute" library="PuppeteerLibrary">
+<doc>Return the value of ``attribute`` from the element.</doc>
+<arguments>
+<arg>xpath://*[@id="classi-credits-card-action"]</arg>
+<arg>target</arg>
+</arguments>
+<assign>
+<var>${card button target text}</var>
+</assign>
+<msg timestamp="20210120 15:18:38.837" level="INFO">${card button target text} = _blank</msg>
+<status status="PASS" starttime="20210120 15:18:38.700" endtime="20210120 15:18:38.837"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${card button link text}</arg>
+<arg>${card button link}</arg>
+</arguments>
+<status status="PASS" starttime="20210120 15:18:38.837" endtime="20210120 15:18:38.838"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${card button target text}</arg>
+<arg>${card button target}</arg>
+</arguments>
+<status status="PASS" starttime="20210120 15:18:38.838" endtime="20210120 15:18:38.838"></status>
+</kw>
+<status status="PASS" starttime="20210120 15:18:38.543" endtime="20210120 15:18:38.838"></status>
+</kw>
+<kw name="Close Puppeteer" library="PuppeteerLibrary" type="teardown">
+<status status="PASS" starttime="20210120 15:18:38.839" endtime="20210120 15:18:38.840"></status>
+</kw>
+<doc>Card is correct for Motors MCO Webmobile</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" starttime="20210120 15:18:35.571" endtime="20210120 15:18:38.840" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210120 15:18:35.301" endtime="20210120 15:18:38.841"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Tests">Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
