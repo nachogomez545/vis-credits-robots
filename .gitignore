@@ -135,6 +135,8 @@ node_modules
 *.png
 *.html
 *.xml
+out/**/*
+out/*.*
 out/**
 out/*
 out
