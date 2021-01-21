@@ -1,13 +1,15 @@
 *** Settings ***
-Documentation  Click off workflow tests
+Library    PuppeteerLibrary
 Resource    resources.robot
-Library    SeleniumLibrary
-Test Teardown     Close Browser
+Resource    ../global_resources.robot
+Test Teardown    Close Puppeteer
 
 *** Test Cases ***
-Test card is present for MCO Motors on Web VIP
-    [Documentation]  Testing card is present for MCO Motors
+Card is correct for Motors MCO Webmobile
+    [Documentation]  Card is correct for Motors MCO Webmobile
     [Tags]  Smoke
-    Open Browser    ${click off mco}     ${browser}
-    Set Selenium Speed    ${delay}
+    ${BROWSER} =     Get variable value    ${BROWSER}     ${DEFAULT_BROWSER}
+    ${HEADLESS} =    Get variable value    ${HEADLESS}    ${False}
+    &{options} =    create dictionary   headless=${HEADLESS}    emulate=iPhone 11
+    Open browser    ${vip}   browser=${BROWSER}    options=${options}    alias=TestBrowser
     Credits click off card should be present and has the right content

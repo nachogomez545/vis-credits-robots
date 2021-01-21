@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation  Click off workflow tests
-Resource    resources.robot
+Resource    global_resources.robot
 Library    SeleniumLibrary
 Test Teardown     Close Browser
 

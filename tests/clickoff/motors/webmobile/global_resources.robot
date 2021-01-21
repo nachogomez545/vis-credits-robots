@@ -1,3 +1,3 @@
 *** Variables ***
-${browser}  chrome
+${DEFAULT_BROWSER}      webkit
 ${delay}    0
